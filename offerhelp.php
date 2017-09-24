@@ -56,19 +56,116 @@
         </ul>
       </nav>
       <!-- Main -->
-      <div id="main">
-        <div class="inner">
-          <h1 contenteditable="true">I WANT TO HELP</h1>
-          <span class="image main">
-            <img src="images/pic13.jpg" alt="">
-          </span>
-          <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis
-            in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis.
-            Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque
-            leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi
-            eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac,
-            pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at,
-            elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+     <div id="main">
+      <div class="inner">
+        <h1>I Want to Help&nbsp;</h1> <span class="image main"><img src="images/pic13.jpg" alt=""></span>
+
+        <form class="form-horizontal" role="form" method="POST" action="uploadofferhelp.php">
+          <div class="form-group"> <label>Name:</label>
+
+            <input type="text" name="namein" class="form-control form-control-lg" placeholder="input name" id="subject" required="" data-validation-required-message="Please enter a subject"> </div>
+
+
+
+
+          <div class="form-group"> <label>Address:</label>
+            <input type="text" name="addressin" class="form-control form-control-lg" placeholder="input Address" id="subject" required="" data-validation-required-message="Please enter a subject"> </div>
+
+          <div class="form-group"> <label>Phone #:</label>
+            <input type="text" name="phonein" class="form-control form-control-lg" placeholder="input phone#" id="subject" required="" data-validation-required-message="Please enter a subject"> </div>
+
+
+ <div class="form-group"> <label>Notes:</label>
+            <input type="text" name="notesin" class="form-control form-control-lg" placeholder="input notes" id="subject" required="" data-validation-required-message="Please enter a subject"> </div>
+
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+
+
+       <?php
+
+
+
+//SQL DataBase log in information from the Cpanel in Godaddy
+
+$servername = "localhost";
+$username ="ironmountain";
+$password ="jumpship";
+$dbName ="riceshelter";
+
+
+//create connection
+
+$conn = new mysqli($servername, $username, $password, $dbName);
+
+//check connection
+
+if ($conn -> connect_error){
+	die ("connection failed: " . $conn -> connect_error);
+}
+
+
+$sql = "SELECT * FROM `volunteer` ";
+
+//If there is a connection display the results 
+//It displays in a table format on the buttom 
+//The echo commands display to the website
+
+$result = $conn ->query($sql);
+
+if ($result-> num_rows >0){
+
+ echo '<div class="table-responsive">';
+ echo '<table class="table table-striped">';
+
+echo "<thead><tr>
+
+<th>name</th>
+<th>address #</th>
+<th>Phone #</th>
+<th>notes</th>
+
+
+
+</tr>";
+
+echo"</thead>";
+
+	while($row = $result -> fetch_assoc()){
+
+echo"<tbody>
+
+<tr>
+
+<td>" . $row["vname"] . "</td>
+<td>" . $row["vadd"] . "</td>
+<td>" . $row["vphone"] . "</td>
+<td>" . $row["vnotes"] ."</td>
+
+</tr>";
+
+echo"</tbody>";
+
+		}
+
+        echo'</table>';
+        echo'</div>';
+       
+
+}else{
+	echo"0 results";
+}
+
+$conn->close();
+
+
+?>
+
+
+
+
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus
             rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia
             nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor

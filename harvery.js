@@ -34,7 +34,9 @@
            var typ="";
            var properties = {
              name:"",
-             address:""
+             address:"",
+             phone:0,
+             taking: "Not Accepting"
            }
            var thelat;
            var thelon;
@@ -47,6 +49,10 @@
            typ = "Feature";
            properties.name = data.shelters[i].shelter;
            properties.address = data.shelters[i].address;
+           properties.phone = data.shelters[i].phone;
+           if(data.shelters[i].accepting == true){
+             properties.taking = "Accepting"
+           }
            thelat = data.shelters[i].latitude;
            thelon = data.shelters[i].longitude;
            //lonlat.push(thelon);
@@ -62,6 +68,7 @@
            
         }
         console.log(therealstuff);
+        geojson = therealstuff;
 
         mapboxgl.accessToken = 'pk.eyJ1IjoiYW5keWVscDM2NDgiLCJhIjoiY2o3eHp4b3VrM3lpbjJ3bnF0MndkZXpoYiJ9.db-ayR6Byqk3KyJnO1jVXA';
         
@@ -69,10 +76,21 @@
           container: 'map',
           style: 'mapbox://styles/mapbox/streets-v9',
           center: [-95.3667, 29.7583],
-          zoom: 10
+          zoom: 11
         });
+        map.on('load',function(){
+          map.addLayer({
+            "id": "places",
+            "type": "symbol",
+            "source":{
+              "type": "geojson",
+              "data": geojson
+            }
+          })
+        })
+        
 
-        geojson = therealstuff;
+        
         console.log(geojson);
         map.addControl(new MapboxGeocoder({
           accessToken: mapboxgl.accessToken
@@ -92,12 +110,28 @@
             new mapboxgl.Marker(el, { offset: [-50 / 2, -50 / 2] })
             .setLngLat(marker.geometry.coordinates)
             .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-            .setHTML('<h3>' + marker.properties.name + '</h3><p>' + marker.properties.address + '</p>'))
-          
+            .setHTML('<h4>' + marker.properties.name + '</h4><p>' + marker.properties.address + '</p><p>' + marker.properties.phone +'</p><p>'+ marker.properties.taking+'</p>'))
+            
             //add the everything to the map
             
             .addTo(map);
+            //console.log(marker.properties.name);
           });
+          // map.on('click', function (e) {
+          //   console.log(e);
+          //   //console.log(geojson);
+          //   for(var j = 0; j < geojson.features.length;++j){
+          //     if(Math.abs(e.lngLat.lng - geojson.features[j].geometry.coordinates[0]) < .0100 
+          //     && Math.abs(e.lngLat.lat - geojson.features[j].geometry.coordinates[1]) < .0100){
+          //       console.log(geojson.features[j].properties.name);
+          //     }
+          //   }
+            
+          //   new mapboxgl.Popup()
+          //       .setLngLat(e.features[0].geometry.coordinates)
+          //       .setHTML(e.features[0].properties.description)
+          //       .addTo(map);
+          // });
 
         },
         //GET request
