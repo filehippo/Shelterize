@@ -79,33 +79,88 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-                    <!--?php //SQL DataBase log in information from the Cpanel in Godaddy $servername="localhost"
-                    ; $username="ironmountain" ; $password="jumpship" ; $dbName="riceshelter"
-                    ; //create connection $conn=n ew mysqli($servername, $username, $password,
-                    $dbName); //check connection if ($conn --->connect_error){ die ("connection failed: " . $conn -&gt; connect_error);
-                        } $sql = "SELECT * FROM `safe` "; //If there is a connection display the
-                        results //It displays in a table format on the buttom //The echo commands
-                        display to the website $result = $conn -&gt;query($sql); if ($result-&gt; num_rows
-                        &gt;0){ echo '
-                        <div class="table-responsive">'; echo '
-                            '; echo "
-                                "; echo""; while($row = $result -&gt; fetch_assoc()){ echo"
-                                "; echo""; } echo'<table class="table table-striped"><thead>
-                                    <tr>
-                                        <th>name</th>
-                                        <th>Location</th>
-                                        <th>Phone #</th>
-                                        <th>notes</th>
-                                        <th>date</th>
-                                    </tr></thead><tbody>
-                                    <tr>
-                                        <td>" . $row["sname"] . "</td>
-                                        <td>" . $row["sloc"] . "</td>
-                                        <td>" . $row["sphone"] . "</td>
-                                        <td>" . $row["snotes"] ."</td>
-                                        <td>" . $row["sdate"] ."</td>
-                                    </tr></tbody></table>'; echo'</div>'; }else{ echo"0 results";
-                        } $conn-&gt;close(); ?&gt;
+
+
+                  <?php
+
+
+
+//SQL DataBase log in information from the Cpanel in Godaddy
+
+$servername = "localhost";
+$username ="ironmountain";
+$password ="jumpship";
+$dbName ="riceshelter";
+
+
+//create connection
+
+$conn = new mysqli($servername, $username, $password, $dbName);
+
+//check connection
+
+if ($conn -> connect_error){
+	die ("connection failed: " . $conn -> connect_error);
+}
+
+
+$sql = "SELECT * FROM `safe` ";
+
+//If there is a connection display the results 
+//It displays in a table format on the buttom 
+//The echo commands display to the website
+
+$result = $conn ->query($sql);
+
+if ($result-> num_rows >0){
+
+ echo '<div class="table-responsive">';
+ echo '<table class="table table-striped">';
+
+echo "<thead><tr>
+
+<th>name</th>
+<th>Location</th>
+<th>Phone #</th>
+<th>notes</th>
+<th>date</th>
+
+
+
+</tr>";
+
+echo"</thead>";
+
+	while($row = $result -> fetch_assoc()){
+
+echo"<tbody>
+
+<tr>
+
+<td>" . $row["sname"] . "</td>
+<td>" . $row["sloc"] . "</td>
+<td>" . $row["sphone"] . "</td>
+<td>" . $row["snotes"] ."</td>
+<td>" . $row["sdate"] ."</td>
+
+</tr>";
+
+echo"</tbody>";
+
+		}
+
+        echo'</table>';
+        echo'</div>';
+       
+
+}else{
+	echo"0 results";
+}
+
+$conn->close();
+
+
+?>
                         
                         
                 </div>
