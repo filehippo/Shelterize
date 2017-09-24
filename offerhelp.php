@@ -35,20 +35,20 @@
         </div>
       </header>
       <!-- Menu -->
-      <nav id="menu">
+           <nav id="menu">
         <h2>Menu</h2>
         <ul>
           <li>
             <a href="index.html">Home</a>
           </li>
           <li>
-            <a href="helpme.html">Help Me</a>
+            <a href="helpme.php">Help Me</a>
           </li>
           <li>
-            <a href="offerhelp.html">I Want To Help</a>
+            <a href="offerhelp.php">I Want To Help</a>
           </li>
           <li>
-            <a href="safe.html">I Am Safe</a>
+            <a href="safe.php">I Am Safe</a>
           </li>
           <li>
             <a href="about.html">About Us</a>
