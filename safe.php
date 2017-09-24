@@ -56,42 +56,173 @@
         </ul>
       </nav>
       <!-- Main -->
-      <div id="main">
-        <div class="inner">
-          <h1 contenteditable="true">I AM SAFE</h1>
-          <span class="image main"></span>
-          <p>POST FORM HERE</p>
+
+
+
+
+
+           <div id="main">
+      <div class="inner">
+        <h1>I am Safe&nbsp;</h1> <span class="image main"><img src="images/pic13.jpg" alt=""></span>
+
+        <form class="form-horizontal" role="form" method="POST" action="uploadsafe.php">
+          <div class="form-group"> <label>Name:</label>
+
+            <input type="text" name="namein" class="form-control form-control-lg" placeholder="input name" id="subject" required="" data-validation-required-message="Please enter a subject"> </div>
+
+
+
+
+          <div class="form-group"> <label>Location:</label>
+            <input type="text" name="locationin" class="form-control form-control-lg" placeholder="input location" id="subject" required="" data-validation-required-message="Please enter a location"> </div>
+
+          <div class="form-group"> <label>Phone #:</label>
+            <input type="text" name="phonein" class="form-control form-control-lg" placeholder="input phone#" id="subject" required="" data-validation-required-message="Please enter a subject"> </div>
+
+
+ <div class="form-group"> <label>Notes:</label>
+            <input type="text" name="notesin" class="form-control form-control-lg" placeholder="input notes" id="subject" required="" data-validation-required-message="Please enter a subject"> </div>
+
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+
+
+       <?php
+
+
+
+//SQL DataBase log in information from the Cpanel in Godaddy
+
+$servername = "localhost";
+$username ="ironmountain";
+$password ="jumpship";
+$dbName ="riceshelter";
+
+
+//create connection
+
+$conn = new mysqli($servername, $username, $password, $dbName);
+
+//check connection
+
+if ($conn -> connect_error){
+	die ("connection failed: " . $conn -> connect_error);
+}
+
+
+$sql = "SELECT * FROM `safe` ";
+
+//If there is a connection display the results 
+//It displays in a table format on the buttom 
+//The echo commands display to the website
+
+$result = $conn ->query($sql);
+
+if ($result-> num_rows >0){
+
+ echo '<div class="table-responsive">';
+ echo '<table class="table table-striped">';
+
+echo "<thead><tr>
+
+<th>name</th>
+<th>Location</th>
+<th>Phone #</th>
+<th>notes</th>
+<th>date</th>
+
+
+
+</tr>";
+
+echo"</thead>";
+
+	while($row = $result -> fetch_assoc()){
+
+echo"<tbody>
+
+<tr>
+
+<td>" . $row["sname"] . "</td>
+<td>" . $row["sloc"] . "</td>
+<td>" . $row["sphone"] . "</td>
+<td>" . $row["snotes"] ."</td>
+<td>" . $row["sdate"] ."</td>
+
+</tr>";
+
+echo"</tbody>";
+
+		}
+
+        echo'</table>';
+        echo'</div>';
+       
+
+}else{
+	echo"0 results";
+}
+
+$conn->close();
+
+
+?>
+
+
+
+
+
+
+
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus
+            rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia
+            nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor
+            fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros
+            ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis
+            non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at,
+            euismod in lectus. Pellentesque habitant morbi tristique senectus et netus
+            et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat
+            maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula
+            hendrerit.</p>
+          <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque
+            venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam,
+            vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur
+            id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis
+            elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
         </div>
       </div>
       <!-- Footer -->
       <footer id="footer">
-        <div class="inner">
-          <section>
-            <h1>Shelterize</h1>
-          </section>
-          <section>
-            <h2>Follow Us</h2>
-            <ul class="icons">
-              <li>
-                <a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a>
-              </li>
-              <li>
-                <a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a>
-              </li>
-              <li>
-                <a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a>
-              </li>
-              <li>
-                <a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a>
-              </li>
-            </ul>
-          </section>
-          <ul class="copyright">
-            <li>© Shelterize. All rights reserved</li>
-            <li>Alfred Albizures, Andrew Montano, Daniel Torres, Devesh Mohan, Jean Orozco</li>
-          </ul>
-        </div>
-      </footer>
+                <div class="inner">
+                    <section>
+                        <h1>Shelterize</h1>
+                    </section>
+                    <section>
+                        <h2>Follow Us</h2>
+                        <ul class="icons">
+                            <li>
+                                <a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a>
+                            </li>
+                        </ul>
+                    </section>
+                    <ul class="copyright">
+                        <li>© Shelterize. All rights reserved</li>
+                        <li>Alfred Albizures, Andrew Montano, Daniel Torres, Devesh Mohan, Jean Orozco</li>
+                    </ul>
+                </div>
+            </footer>
     </div>
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
