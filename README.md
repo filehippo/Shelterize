@@ -3,7 +3,9 @@
 [Shelterize](shelterize.net) 
 
 Shelterize is a web app intended to help those seek shelter and stay informed during natural disasters or other calamities.
+
 [Devpost Award](https://devpost.com/software/shelterize)
+
 Hack Rice 7 Winner - Best Design & Best Use of Microsoft Azure
 
 
