@@ -11,9 +11,7 @@ Hack Rice 7 Winner - Best Design & Best Use of Microsoft Azure
 
 ![alt text](https://github.com/filehippo/https-github.com-Dan-Tor-OK-Munchy/blob/master/Shelterize.PNG)
 Main Page
-![alt text](https://github.com/filehippo/https-github.com-Dan-Tor-OK-Munchy/blob/master/safe.PNG)
 
-I am Safe Page -------------------------------------------------------------------------------------
 
 
 
@@ -30,6 +28,11 @@ Shelterize is unique in that it doesn't limit itself to just the devestation of 
 - MY SQL, JQuery, JAVASCRIPT 
 - Go daddy Hosting Services 
 - Google Maps APIs 
+
+
+![alt text](https://github.com/filehippo/https-github.com-Dan-Tor-OK-Munchy/blob/master/safe.PNG)
+
+I am Safe Page
 
 
 -People In Need: Often times emergency lines are too busy or the person does not have the required social media (Elderly, Children, etc) to notify others.
