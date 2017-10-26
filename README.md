@@ -30,12 +30,13 @@ Shelterize is unique in that it doesn't limit itself to just the devestation of 
 - Google Maps APIs 
 
 
-![alt text](https://github.com/filehippo/https-github.com-Dan-Tor-OK-Munchy/blob/master/safe.PNG)
-
-I am Safe Page
-
-
 -People In Need: Often times emergency lines are too busy or the person does not have the required social media (Elderly, Children, etc) to notify others.
 -People Who Are Safe: Shelterize allows a unified framework to let others know they are safe besides standard social media. Those who may not be on certain social networks can still see if friends and relatives are safe.
 -People Who Want To Help: Shelterize provides a unified framework to allow volunteers to readily provide shelter or supplies when possible.
 Shelterize - Stay Safe
+
+I am Safe Page
+
+![alt text](https://github.com/filehippo/https-github.com-Dan-Tor-OK-Munchy/blob/master/safe.PNG)
+
+
