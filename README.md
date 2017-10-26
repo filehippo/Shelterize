@@ -35,8 +35,5 @@ Shelterize is unique in that it doesn't limit itself to just the devestation of 
 -People Who Want To Help: Shelterize provides a unified framework to allow volunteers to readily provide shelter or supplies when possible.
 Shelterize - Stay Safe
 
-I am Safe Page
-
-![alt text](https://github.com/filehippo/https-github.com-Dan-Tor-OK-Munchy/blob/master/safe.PNG)
 
 
