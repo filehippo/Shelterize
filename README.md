@@ -8,10 +8,10 @@ Hack Rice 7 Winner - Best Design & Best Use of Microsoft Azure
 
 
 ![alt text](https://github.com/filehippo/https-github.com-Dan-Tor-OK-Munchy/blob/master/Shelterize.PNG)
+Main Page
+![alt text](https://github.com/filehippo/https-github.com-Dan-Tor-OK-Munchy/blob/master/safe.PNG)
 
-
-
-
+I am Safe Page 
 
 [Devpost Award](https://devpost.com/software/shelterize)
 
