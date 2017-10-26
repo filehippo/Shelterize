@@ -13,7 +13,7 @@ Hack Rice 7 Winner - Best Design & Best Use of Microsoft Azure
 
 
 
-
+[Contribution guidelines for this project](docs/CONTRIBUTING.md)
 
 Shelterize began as a collaborative project during Rice Hackathon 2017. 
 It was born out of a need to address the recent ongoing disasters with Harvey, Irma and earthquakes in Mexico.
