@@ -1,6 +1,6 @@
 # Shelterize.net
 
-Shelterize 
+[Shelterize](shelterize.net) 
 
 Shelterize is a web app intended to help those seek shelter and stay informed during natural disasters or other calamities.
 
