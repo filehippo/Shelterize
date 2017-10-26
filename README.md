@@ -3,7 +3,7 @@
 [Shelterize](shelterize.net) 
 
 Shelterize is a web app intended to help those seek shelter and stay informed during natural disasters or other calamities.
-
+[Devpost Award](https://devpost.com/software/shelterize)
 Hack Rice 7 Winner - Best Design & Best Use of Microsoft Azure
 
 
@@ -11,9 +11,9 @@ Hack Rice 7 Winner - Best Design & Best Use of Microsoft Azure
 Main Page
 ![alt text](https://github.com/filehippo/https-github.com-Dan-Tor-OK-Munchy/blob/master/safe.PNG)
 
-I am Safe Page 
+I am Safe Page -------------------------------------------------------------------------------------
 
-[Devpost Award](https://devpost.com/software/shelterize)
+
 
 Shelterize began as a collaborative project during Rice Hackathon 2017. 
 It was born out of a need to address the recent ongoing disasters with Harvey, Irma and earthquakes in Mexico.
